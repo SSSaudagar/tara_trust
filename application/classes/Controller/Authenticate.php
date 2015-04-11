@@ -4,10 +4,14 @@ class Controller_Authenticate extends Controller {
 
 	public function action_login()
 	{
-        $session = Session::instance();
-        print_r($session->as_array());
+        session_start();
+        session_unset();
+        session_destroy();
+        
+//        print_r($session->as_array());
         $admin = Model::factory('admin');
         if (!empty($_POST)) {
+            $session = Session::instance();
             $final = $admin->validate_admin(arr::extract($_POST,array('username','password')));
             $details = $admin->get_admin_details($final['username']);
             if(!empty($details) and $details['password']===$final['password']){
