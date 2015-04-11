@@ -12,6 +12,7 @@ class Controller_Welcome extends Controller {
         $view = View::factory('login');
 		$this->response->body($view);
 	}
+
     public function action_home()
 	{
         $view = View::factory('home');

@@ -125,13 +125,12 @@
                   <div id="form_header"><div id='header_name'>Member Login</div></div>
                 <div id='form_box'>
                             <section>
-                            <form method="post" action="include/login.php" class="form" onsubmit="return validate();">
+                            <form method="post" action="<?php echo url::base() ?>index.php/authenticate/login" class="form" onsubmit="return validate();">
                                 
                                 <div class="form-group">
                                     <div class="col-sm-12">
                                         <label>Username:</label>
-    <input class="form-control" type="email" id='email' name="email" id="email" pattern = "^.+@[^\.].*\.[a-z]{2,}$"       
-                                                       placeholder="Username" style="border-radius:0" autofocus>
+    <input class="form-control" type="text" id='username' name="username" placeholder="Username" style="border-radius:0" autofocus>
                                     </div>
   </div>
                                 <br><br>
@@ -157,7 +156,7 @@
                                 ?>
                                 <div id='form_button'>
                                 <div class="col-sm-12">
-                                    <a href="#" name="login" id="submit" type="submit" value="Login" class="btn btn-default submit" style="color:white;width:100%;" >Login</a>
+                                    <button  name="login" id="submit" type="submit" value="Login" class="btn btn-default submit" style="color:white;width:100%;" >Login</button>
                                 </div>
                                 </div>
                             </form>
