@@ -10,9 +10,9 @@ Class Model_Children extends Model
 //  `work` text NOT NULL
 //) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Street children' AUTO_INCREMENT=1 ;
     
-     public function get_children_taluka($taluka){
-        $query = DB::query(Database::SELECT, 'SELECT * FROM children WHERE taluka = :taluka');
-        $query->bind(':taluka',$taluka);
+     public function get_children_taluka(){
+        $query = DB::query(Database::SELECT, 'SELECT * FROM children  join places on children.place = place_id order by taluka');
+//        $query->bind(':taluka',$taluka);
         $result = $query->execute();
         return $result->as_array();
     }
