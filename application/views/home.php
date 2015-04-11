@@ -46,6 +46,7 @@
     </head>
     
     <body>
+   
         <div id='nav-bar'>
             <div id='logout'>
                 <div id='out'><a class="btn btn-danger" href="#">Logout <span class="glyphicon glyphicon-log-out"></span></a></div>
@@ -57,7 +58,7 @@
                 <div class="col-sm-9">
                     <div class="form-group" id='select-element'>
                         <label class="col-sm-3" for='select-place'>Display details based on:</label>
-                        <div class='col-sm-9'>
+                        <div class='col-sm-7'>
                              <select class="form-control" id='select-place' name="select-place" style="border-radius:0">
                                 <option value="">--Select--</option>
                                 <option value="Taluka">Taluka</option>
@@ -65,12 +66,20 @@
                                 <option value="State">State</option>
                              </select>
                         </div>
+                        <div class="col-sm-2">
+                            <button class="btn btn-default" type = "submit">Search record</button>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-2"></div>
             </div>
             <div class="row">
-                <div class="col-sm-12"></div>
+                <div class="col-sm-12">
+                    <?php 
+                        
+                        
+                    ?>
+                </div>
             </div>
         </div>
          <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
