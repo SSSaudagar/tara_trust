@@ -89,6 +89,29 @@
         {
             background:#bd4932;
         }
+        
+        @media screen and (max-width: 800px) 
+        {
+            #form_header
+            {
+                font-size:30px;
+            }
+            
+            label
+            {
+                font-size:12px;
+            }
+            
+            .submit
+            {
+                font-size: 18px;
+            }
+            
+            .form-group
+            {
+                padding-top:2px;
+            }
+        }
     </style>  
       
       
