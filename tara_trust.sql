@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2015 at 11:08 PM
+-- Generation Time: Apr 12, 2015 at 07:14 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
-
+drop database `tara_trust`;
 --
 -- Database: `tara_trust`
 --
@@ -45,31 +45,19 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 TRUNCATE TABLE `admin`;
--- --------------------------------------------------------
-
 --
--- Table structure for table `assigned`
---
--- Creation: Apr 11, 2015 at 09:16 AM
+-- Dumping data for table `admin`
 --
 
-DROP TABLE IF EXISTS `assigned`;
-CREATE TABLE IF NOT EXISTS `assigned` (
-  `child_id` int(11) NOT NULL,
-  `volunteer_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `admin` (`username`, `name`, `password`) VALUES
+('shas', 'shashank', '12345');
 
---
--- Truncate table before insert `assigned`
---
-
-TRUNCATE TABLE `assigned`;
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `children`
 --
--- Creation: Apr 11, 2015 at 08:53 AM
+-- Creation: Apr 12, 2015 at 04:59 AM
 --
 
 DROP TABLE IF EXISTS `children`;
@@ -78,14 +66,22 @@ CREATE TABLE IF NOT EXISTS `children` (
   `name` varchar(50) NOT NULL,
   `age` int(11) NOT NULL,
   `place` int(11) NOT NULL,
-  `work` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Street children' AUTO_INCREMENT=1 ;
+  `description` text NOT NULL,
+  `assigned_to` int(11) DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Street children' AUTO_INCREMENT=2 ;
 
 --
 -- Truncate table before insert `children`
 --
 
 TRUNCATE TABLE `children`;
+--
+-- Dumping data for table `children`
+--
+
+INSERT INTO `children` (`child_id`, `name`, `age`, `place`, `description`, `assigned_to`) VALUES
+(1, 'sachin', 12, 1, 'Cleaner', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -134,14 +130,15 @@ TRUNCATE TABLE `sessions`;
 --
 -- Table structure for table `volunteer`
 --
--- Creation: Apr 11, 2015 at 09:09 AM
+-- Creation: Apr 12, 2015 at 04:51 AM
 --
 
 DROP TABLE IF EXISTS `volunteer`;
 CREATE TABLE IF NOT EXISTS `volunteer` (
 `volunteer_id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
-  `place` int(11) NOT NULL
+  `place` int(11) NOT NULL,
+  `contact` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -158,12 +155,6 @@ TRUNCATE TABLE `volunteer`;
 --
 ALTER TABLE `admin`
  ADD PRIMARY KEY (`username`);
-
---
--- Indexes for table `assigned`
---
-ALTER TABLE `assigned`
- ADD PRIMARY KEY (`child_id`,`volunteer_id`);
 
 --
 -- Indexes for table `children`
@@ -197,7 +188,7 @@ ALTER TABLE `volunteer`
 -- AUTO_INCREMENT for table `children`
 --
 ALTER TABLE `children`
-MODIFY `child_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `child_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `places`
 --

@@ -20,7 +20,7 @@ class Controller_Authenticate extends Controller {
                 $session->set('username', $final['username']);
 //                session_start();
                 $_SESSION =& $session->as_array();
-                HTTP::redirect('home/');    
+                HTTP::redirect('admin/');    
 
             }
             else echo 'invalid username or password';

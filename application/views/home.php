@@ -236,7 +236,7 @@ td:last-child {
                 <div class="col-sm-1"></div>
                 <div class="col-sm-9">
                     <h1 id='record_header'>children's records</h1>
-                    <form method="post" action="<?php echo url::base() ?>index.php/home/" class="form">
+                    <form method="post" action="<?php echo url::base() ?>index.php/admin/" class="form">
                         <div class="form-group" id='select-element'>
                             <label class="col-sm-3" for='select-place'>Display details based on:</label>
                             <div class='col-sm-7'>
