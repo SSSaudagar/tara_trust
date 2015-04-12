@@ -12,7 +12,17 @@ Class Model_Places extends Model
 //  `state` varchar(20) NOT NULL
 //) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Information about places' AUTO_INCREMENT=1 ;
         
+    public function add_places($d){
+         return DB::insert('places', array('place','taluka','district','state'))
+            ->values(array($d['place'],$d['taluka'],$d['district'],$d['state']))
+            ->execute();
+    }
     
+    public function by_place($place){
+        $query = DB::query(Database::SELECT, 'SELECT * FROM place');
+        $result = $query->execute();
+        return $result->as_array();
+    }
     
      public function validate_place($arr) {
         foreach($arr as $value){

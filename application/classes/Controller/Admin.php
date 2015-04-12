@@ -22,11 +22,11 @@ class Controller_admin extends Controller {
             case 'state': $details = $children->get_children_state(); break;
             }
 //            print_r($details);
-            $view = View::factory('home')->bind('details',$details);
+            $view = View::factory('admin/searchchildren')->bind('details',$details);
             $this->response->body($view);
 
         }else{
-            $view = View::factory('home');
+            $view = View::factory('admin/searchchildren');
             $this->response->body($view);
         }
     }
@@ -35,7 +35,16 @@ class Controller_admin extends Controller {
         if(!empty($_POST)){
             
         }else{
-            $view = View::factory('volunteer');
+            $view = View::factory('admin/addvolunteer');
+            $this->response->body($view);   
+        }
+    }
+    
+    public function action_addplaces(){
+        if(!empty($_POST)){
+            
+        }else{
+            $view = View::factory('admin/addplaces');
             $this->response->body($view);   
         }
     }

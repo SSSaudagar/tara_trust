@@ -21,7 +21,6 @@ class Controller_Authenticate extends Controller {
 //                session_start();
                 $_SESSION =& $session->as_array();
                 HTTP::redirect('admin/');    
-
             }
             else echo 'invalid username or password';
         
