@@ -131,7 +131,7 @@
                   <div id="form_header"><div id='header_name'>New Admin registration form</div></div>
                 <div id='form_box'>
                             <section>
-                            <form method="post" action="<?php echo url::base() ?>index.php/authenticate/login" class="form" onsubmit="return validate();">
+                            <form method="post" action="<?php echo url::base() ?>index.php/admin/addadmin" class="form" onsubmit="return validate();">
                                 
                                 <div class="form-group">
                                     <div class="col-sm-12">
@@ -142,7 +142,7 @@
                                 <div class="form-group">
                                     <div class="col-sm-12">
                                         <label>Username:</label>
-    <input class="form-control" type="text" id='volunteer_place' name="volunteer_place" placeholder="Place" style="border-radius:0" autofocus>
+    <input class="form-control" type="text" id='user' name="user" placeholder="Place" style="border-radius:0" autofocus>
                                     </div>
                                 </div> 
                                 <div class="form-group">

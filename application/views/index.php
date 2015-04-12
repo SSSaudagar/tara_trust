@@ -45,12 +45,6 @@
     </head>
     
     <body>
-<!--    <div id='abc3'>
-        <div id='popup3'>
-   
-    </div>
-</div>-->
-
 
         <div class="container-fluid">
             <div class="row">
@@ -62,7 +56,7 @@
                         </center>
                     </div>-->
                 <div id='form3'>
-                <center><h2>Registration form</h2></center><br>
+                <center><h2>Child Registration form</h2></center><br>
                 <div class='panel panel-default"'>
                     <!--<div class="panel-heading" style="text-align:center;font-weight:bold">
                         Street child registration form
@@ -82,14 +76,14 @@
                         <div class="form-group" style="padding-top:2%">
                            <label class="col-sm-3" for='name'>Name:</label>
                             <div class='col-sm-9'>
-                            <input class="form-control" name="name" id="name" placeholder="Name">
+                            <input class="form-control" name="name" id="name" placeholder="Name" style="border-radius:0">
                             </div>
                         </div>
                         <br><br>
                         <div class="form-group">
-                           <label class="col-sm-4" for='description'>Description:</label>
-                            <div class='col-sm-8'>
-                                <textarea class="form-control" rows="4" cols="20" name="description" id="description" placeholder="Description of the child"></textarea>
+                           <label class="col-sm-3" for='description'>Description:</label>
+                            <div class='col-sm-9'>
+                                <textarea class="form-control" rows="4" cols="20" name="description" id="description" placeholder="Description of the child" style="border-radius:0"></textarea>
                             </div>
                         </div>
                             <div></div>

@@ -132,7 +132,7 @@
                   <div id="form_header"><div id='header_name'>Place registration form</div></div>
                 <div id='form_box'>
                             <section>
-                            <form method="post" action="<?php echo url::base() ?>index.php/authenticate/login" class="form" onsubmit="return validate();">
+                            <form method="post" action="<?php echo url::base() ?>index.php/admin/addplaces" class="form" onsubmit="return validate();">
                                 
                                 <div class="form-group">
                                     <div class="col-sm-12">

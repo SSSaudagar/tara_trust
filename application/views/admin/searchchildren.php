@@ -234,7 +234,7 @@ td:last-child {
    
         <div id='nav-bar'>
             <div id='logout'>
-                <div id='out'><a class="btn btn-primary" href="<?php echo url::base() ?>index.php/authenticate/logout">Logout <span class="glyphicon glyphicon-log-out"></span></a></div>
+                <div id='out'><a class="btn btn-primary" href="<?php echo url::base() ?>index.php/admin/searchchildren">Logout <span class="glyphicon glyphicon-log-out"></span></a></div>
             </div>
         </div>
         <div class="container-fluid" style="padding-bottom:6%;">
