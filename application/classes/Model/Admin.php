@@ -12,7 +12,8 @@ Class Model_Admin extends Model
         $query = DB::query(Database::SELECT, 'SELECT * FROM admin WHERE username = :user');
         $query->bind(':user',$user);
         $result = $query->execute();
-        return $result->as_array();
+        $a = $result->as_array();
+        return $a[0];
     }
     
     public function add_admin($d){

@@ -3,6 +3,13 @@
 class Controller_home extends Controller {
     
     public function action_index(){
+        $session = Session::instance();
+//        print_r($_SESSION);
+        if(!isset($_SESSION['logged_in']) or !isset($_SESSION['username']) or $_SESSION['logged_in']!=true ){
+            HTTP::redirect('welcome/login');
+            echo 'redirect unsuccessful';
+        }
+        print_r($_POST);        
         if(!empty($_POST)){
             $children =Model::factory('children');
 //            print_r($_POST);
