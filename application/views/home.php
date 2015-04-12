@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <title>Member Login</title>
+      <title>children records</title>
 
     <!-- Bootstrap -->
     <link href="<?php echo url::base() ?>bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -59,6 +59,12 @@
             border-color:#AB3838;
             color:#AB3838;
             background:white;            
+        }
+        
+        input[type='text']:focus, select[name='place']:focus
+        {
+            border-color:#AB3838;
+            box-shadow:0 0 3px 1px rgba(171,56,56,0.4);
         }
         
         #out a 
@@ -238,17 +244,28 @@ td:last-child {
                     <h1 id='record_header'>children's records</h1>
                     <form method="post" action="<?php echo url::base() ?>index.php/admin/" class="form">
                         <div class="form-group" id='select-element'>
-                            <label class="col-sm-3" for='select-place'>Display details based on:</label>
-                            <div class='col-sm-7'>
-                                 <select class="form-control" id='select-place' name="place" style="border-radius:0">
-                                    <option value="">--Select--</option>
-                                    <option value="taluka">Taluka</option>
-                                    <option value="district">District</option>
-                                    <option value="state">State</option>
-                                 </select>
+                            <div class="row">
+                                <label class="col-sm-3" for='select-place'>Display details based on:</label>
+                                <div class='col-sm-7'>
+                                     <select class="form-control" id='select-place' name="place" style="border-radius:0">
+                                        <option value="">--Select--</option>
+                                        <option value="taluka">Taluka</option>
+                                        <option value="district">District</option>
+                                        <option value="state">State</option>
+                                     </select>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button class="btn btn-default" type = "submit">Display records</button>
+                                </div>
                             </div>
-                            <div class="col-sm-2">
-                                <button class="btn btn-default" type = "submit">Display records</button>
+                            <br>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-3" for='filter_by'>Filter by:</label>
+                                    <div class="col-sm-6">
+    <input class="form-control" type="text" id='filter_by' name="filter_by" placeholder="Enter Taluka, District or State" style="border-radius:0" autofocus>
+                                    </div>
+  </div>
                             </div>
                         </div>
                     </form>
@@ -275,11 +292,6 @@ td:last-child {
 					<th>State</th></tr></thead><tbody>';
                         foreach($details as $row){
                             echo '<tr>';
-//                                foreach($row as $column){
-//                                    echo '<td>';
-//                                    echo $column;
-//                                    echo '</td>';
-//                                }
                             echo "<td>{$row['name']}</td>";
                             echo "<td>{$row['age']}</td>";
                             echo "<td>{$row['place']}</td>";
