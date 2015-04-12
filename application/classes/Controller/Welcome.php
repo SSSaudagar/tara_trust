@@ -30,5 +30,11 @@ class Controller_Welcome extends Controller {
         $view = View::factory('admin');
 		$this->response->body($view);
 	}
+    
+    public function action_places()
+	{
+        $view = View::factory('places');
+		$this->response->body($view);
+	}
 
 } // End Welcome

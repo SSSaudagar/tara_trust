@@ -86,12 +86,12 @@
                             </div>
                         </div>
                         <br><br>
-                        <!--<div class="form-group">
+                        <div class="form-group">
                            <label class="col-sm-4" for='description'>Description:</label>
                             <div class='col-sm-8'>
                                 <textarea class="form-control" rows="4" cols="20" name="description" id="description" placeholder="Description of the child"></textarea>
                             </div>
-                        </div>-->
+                        </div>
                             <div></div>
                         <br><br>
                         <center>
