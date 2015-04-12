@@ -49,5 +49,12 @@ Class Model_Children extends Model
         }
     }
     
-    
+    public function in_place($place){
+        $query = DB::query(Database::SELECT, 'SELECT count(*) as count FROM children where place = :place');
+        $query->bind(':place',$place);
+        $result = $query->execute();
+        $array= $result->as_array();
+        return $array['count'];
+
+    }
 }

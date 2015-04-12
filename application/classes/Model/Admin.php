@@ -17,8 +17,9 @@ Class Model_Admin extends Model
     }
     
     public function add_admin($d){
+        
          return DB::insert('admin', array('username','name','password'))
-            ->values(array($d['username'],$d['name'],$d['password']))
+            ->values(array($d['user'],$d['name'],$d['password']))
             ->execute();
     }
     

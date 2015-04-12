@@ -33,9 +33,30 @@ class Controller_admin extends Controller {
     
     public function action_addvolunteer(){
         if(!empty($_POST)){
-            
+            $volunteer = Model::factory('volunteer');
+            $final=$volunteer->validate_volunteer(arr::extract($_POST,array('name','volunteer_place','contact')));
+            if($volunteer->add_volunteer($final)){
+                die('success');//success
+            }else{
+                die('failure');//failure
+            }
         }else{
             $view = View::factory('admin/addvolunteer');
+            $this->response->body($view);   
+        }
+    }
+    
+    public function action_addadmin(){
+        if(!empty($_POST)){
+            $admin = Model::factory('admin');
+            $final=$admin->validate_admin(arr::extract($_POST,array('name','user','password')));
+            if($admin->add_admin($final)){
+                die('success');//success
+            }else{
+                die('failure');//failure
+            }
+        }else{
+            $view = View::factory('admin/addadmin');
             $this->response->body($view);   
         }
     }

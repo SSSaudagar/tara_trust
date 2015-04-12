@@ -13,7 +13,7 @@ Class Model_Volunteer extends Model
         
     public function add_volunteer($d){
          return DB::insert('volunteer', array('name','place','contact'))
-            ->values(array($d['name'],$d['place'],$d['contact']))
+            ->values(array($d['name'],$d['volunteer_place'],$d['contact']))
             ->execute();
     }
     
@@ -22,6 +22,15 @@ Class Model_Volunteer extends Model
         $query->bind(':place',$place);
         $result = $query->execute();
         return $result->as_array();
+
+    }
+    
+    public function in_place($place){
+        $query = DB::query(Database::SELECT, 'SELECT count(*) as count FROM volunteer where place = :place');
+        $query->bind(':place',$place);
+        $result = $query->execute();
+        $array= $result->as_array();
+        return $array['count'];
 
     }
     
