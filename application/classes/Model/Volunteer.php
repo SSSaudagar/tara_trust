@@ -25,7 +25,7 @@ Class Model_Volunteer extends Model
 
     }
     
-     public function validate_admin($arr) {
+     public function validate_volunteer($arr) {
         foreach($arr as $value){
              $value = trim($value);
             $value = strip_tags($value);

@@ -31,6 +31,13 @@ class Controller_admin extends Controller {
         }
     }
     
-    
+    public function action_addvolunteer(){
+        if(!empty($_POST)){
+            
+        }else{
+            $view = View::factory('volunteer');
+            $this->response->body($view);   
+        }
+    }
 
 }
