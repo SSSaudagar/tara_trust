@@ -24,5 +24,11 @@ class Controller_Welcome extends Controller {
         $view = View::factory('volunteer');
 		$this->response->body($view);
 	}
+    
+    public function action_admin()
+	{
+        $view = View::factory('admin');
+		$this->response->body($view);
+	}
 
 } // End Welcome
