@@ -16,4 +16,16 @@ Class Model_Children extends Model
         $result = $query->execute();
         return $result->as_array();
     }
+     public function get_children_district(){
+        $query = DB::query(Database::SELECT, 'SELECT * FROM children  join places on children.place = place_id order by district');
+//        $query->bind(':taluka',$taluka);
+        $result = $query->execute();
+        return $result->as_array();
+    }
+     public function get_children_state(){
+        $query = DB::query(Database::SELECT, 'SELECT * FROM children  join places on children.place = place_id order by state');
+//        $query->bind(':taluka',$taluka);
+        $result = $query->execute();
+        return $result->as_array();
+    }
 }

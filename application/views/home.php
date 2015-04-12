@@ -41,6 +41,66 @@
         {
             margin-top:10%;
         }
+        
+        #child-details-table
+        {
+            margin-top:10%;
+        }
+
+        th
+        {
+            height: 54px;
+            width: 11%;
+            text-align:center;
+        }
+       
+        td
+        {
+           text-align:center; 
+        }
+        
+                    th {
+  background: #917965;
+  height: 54px;
+  width: 16%;
+  font-weight: lighter;
+font-size:18px;
+  text-shadow: 0 1px 0 #6E5C4C;
+  color: white;
+  border: 1px solid #6E5C4C;
+  box-shadow: inset 0px 1px 2px #917965;
+  transition: all 0.2s;
+}
+       
+table {
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}            
+            
+th, td
+{
+  text-align:center;
+}
+
+tbody
+{
+    background:white;
+}
+            
+tr {
+  border-bottom: 1px solid #cccccc;
+}
+tr:last-child {
+  border-bottom: 0px;
+}
+td {
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  padding: 10px;
+  transition: all 0.2s;
+}
+td:last-child {
+  border-right: 0px;
+}
     </style>  
       
     </head>
@@ -60,11 +120,11 @@
                         <div class="form-group" id='select-element'>
                             <label class="col-sm-3" for='select-place'>Display details based on:</label>
                             <div class='col-sm-7'>
-                                 <select class="form-control" id='select-place' name="select-place" style="border-radius:0">
+                                 <select class="form-control" id='select-place' name="place" style="border-radius:0">
                                     <option value="">--Select--</option>
-                                    <option value="Taluka">Taluka</option>
-                                    <option value="District">District</option>
-                                    <option value="State">State</option>
+                                    <option value="taluka">Taluka</option>
+                                    <option value="district">District</option>
+                                    <option value="state">State</option>
                                  </select>
                             </div>
                             <div class="col-sm-2">
@@ -76,22 +136,43 @@
                 <div class="col-sm-2"></div>
             </div>
             <div class="row">
-                <div class="col-sm-12">
-                    <table>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div id='child-details-table'>
                     <?php 
+    
+        if($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
+                    echo '<table border = 1>';
+                    echo '<thead><tr>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Place</th>
+					<th>Work</th>
+					<th>Taluka</th>
+					<th>District</th>
+					<th>State</th></tr></thead><tbody>';
                         foreach($details as $row){
                             echo '<tr>';
-                                foreach($row as $column){
-                                    echo '<td>';
-                                    echo $column;
-                                    echo '</td>';
-                                }
+//                                foreach($row as $column){
+//                                    echo '<td>';
+//                                    echo $column;
+//                                    echo '</td>';
+//                                }
+                            echo "<td>{$row['name']}</td>";
+                            echo "<td>{$row['age']}</td>";
+                            echo "<td>{$row['place']}</td>";
+                            echo "<td>{$row['work']}</td>";
+                            echo "<td>{$row['taluka']}</td>";
+                            echo "<td>{$row['district']}</td>";
+                            echo "<td>{$row['state']}</td>";
                             echo '</tr>';
                             
                         }
-                        
+                    echo "</tbody></table>";
+}
                     ?>
-                    </table>
+                    </div>
                 </div>
             </div>
         </div>
